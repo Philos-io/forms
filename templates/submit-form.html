@@ -1,0 +1,14 @@
+<div class="row" ng-controller="MainController as main">
+	<h1>Form: Submit, ng-disabled and form's state</h1>
+	<form novalidate name="simpleForm">
+
+		<input class="form-control" type="text" ng-model="main.name" required>
+		<br/>
+		<button class="btn btn-success">Submit</button>
+		<br/>
+
+		<pre>
+			{{simpleForm | json}}
+		</pre>
+	</form>	
+</div>
