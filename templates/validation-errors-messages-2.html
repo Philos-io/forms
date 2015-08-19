@@ -1,0 +1,27 @@
+<div class="row" ng-controller="MainController as main">
+	<h1>Form: validation and errors' messages (Part 1) </h1>
+	<form novalidate name="simpleForm" ng-submit="main.submit()">
+
+		<input class="form-control" type="text" ng-model="main.name" name="name" required ng-minlength="3" ng-maxlength="10"/>
+		<span ng-if="simpleForm.name.$error.required">
+			This field is required!
+		</span>
+
+		<span ng-if="simpleForm.name.$error.maxlength">
+			The max length is 10 ({{main}})
+		</span>
+
+		<span ng-if="simpleForm.name.$error.minlength">
+			The min length is 3 ({{ simpleForm.name.$viewValue.length}})
+		</span>
+
+		<br/>
+
+		<button class="btn btn-success" ng-disabled="simpleForm.$invalid">Submit</button>
+		<br/>
+
+		<pre>
+			{{simpleForm.name.$error | json}}
+		</pre>
+	</form>	
+</div>	

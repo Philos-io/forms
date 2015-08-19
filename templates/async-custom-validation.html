@@ -1,0 +1,22 @@
+<div class="row" ng-controller="MainController as main">
+	<h1>Form: Async validation and custom validation, ng-model-options</h1>
+	<form novalidate name="simpleForm" ng-submit="main.submit()">
+
+		<input class="form-control" type="text" ng-model="main.name" name="name" required />
+
+        <div ng-messages="simpleForm.name.$error">
+          	<div ng-message="required" ng-if="simpleForm.name.$touched">
+          		This field is required
+          	</div>
+		</div>
+
+		<br/>
+
+		<button class="btn btn-success">Submit</button>
+		<br/>
+
+		<pre>
+			{{simpleForm.name | json}}
+		</pre>
+	</form>	
+</div>		

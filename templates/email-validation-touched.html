@@ -1,0 +1,22 @@
+<div class="row" ng-controller="MainController as main">
+	<h1>Form: email validation, ng-touch and ng-untouched </h1>
+	<form novalidate name="simpleForm" ng-submit="main.submit()">
+
+		<input class="form-control" type="email" ng-model="main.name" name="name" required />
+		
+        <div ng-messages="simpleForm.name.$error">
+          	<div ng-message="required">
+          		This field is required
+          	</div>
+		</div>
+
+		<br/>
+
+		<button class="btn btn-success">Submit</button>
+		<br/>
+
+		<pre>
+			{{simpleForm.name | json}}
+		</pre>
+	</form>	
+</div>
